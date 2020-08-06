@@ -152,7 +152,7 @@ struct TitleView: View {
 
 struct BottomCardView: View {
     var body: some View {
-        VStack(spacing : 20) {
+        VStack(spacing : 40) {
             
             Rectangle()
                 .frame(width: 40, height: 5)
@@ -163,6 +163,16 @@ struct BottomCardView: View {
                 .multilineTextAlignment(.center)
                 .font(.subheadline)
                 .lineSpacing(4)
+            Image("Logo3")
+                .resizable()
+                .frame(width: 100, height: 100)
+                .aspectRatio(contentMode: .fit)
+            
+            Text("© Kohinoor")
+                .font(.headline)
+                .fontWeight(.semibold)
+                .foregroundColor(Color("card5"))
+            
             Spacer()
         }
         .padding(.top, 10)
