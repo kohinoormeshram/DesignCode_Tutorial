@@ -16,6 +16,7 @@
 		84A706E024DBCC73008AAEEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A706DF24DBCC73008AAEEE /* Assets.xcassets */; };
 		84A706E324DBCC73008AAEEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A706E224DBCC73008AAEEE /* Preview Assets.xcassets */; };
 		84A706E624DBCC73008AAEEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A706E424DBCC73008AAEEE /* LaunchScreen.storyboard */; };
+		84DF404624F3C21500A2DA67 /* UpdateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF404524F3C21500A2DA67 /* UpdateList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		84A706E224DBCC73008AAEEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		84A706E524DBCC73008AAEEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84A706E724DBCC73008AAEEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84DF404524F3C21500A2DA67 /* UpdateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				84A706DD24DBCC70008AAEEE /* ContentView.swift */,
 				8439483D24EE5865004A6A31 /* MenuView.swift */,
 				8439483F24EE6EDC004A6A31 /* Home.swift */,
+				84DF404524F3C21500A2DA67 /* UpdateList.swift */,
 				8439484B24EF914D004A6A31 /* HomeView.swift */,
 				84A706DF24DBCC73008AAEEE /* Assets.xcassets */,
 				84A706E424DBCC73008AAEEE /* LaunchScreen.storyboard */,
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A706DA24DBCC70008AAEEE /* AppDelegate.swift in Sources */,
+				84DF404624F3C21500A2DA67 /* UpdateList.swift in Sources */,
 				8439483E24EE5865004A6A31 /* MenuView.swift in Sources */,
 				8439484024EE6EDC004A6A31 /* Home.swift in Sources */,
 				8439484C24EF914D004A6A31 /* HomeView.swift in Sources */,
