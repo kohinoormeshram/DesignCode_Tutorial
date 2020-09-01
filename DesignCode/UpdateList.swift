@@ -9,39 +9,57 @@
 import SwiftUI
 
 struct UpdateList: View {
+    
+    @ObservedObject var store = UpdateStore()
+    
+    func addUpdate(){
+        store.updates.append(Update(image: "Card6", title: "React Native for Designers", text: "Build your own iOS and Android app with custom animations, Redux and API data.", date: "FEB 14"))
+    }
+    
     var body: some View {
         NavigationView {
-            List(updateData) { update in
-                NavigationLink(destination: UpdateDetail(update: update)) {
-                    HStack {
-                        
-                        Image(update.image)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 80, height: 80)
-                            .background(Color.black)
-                            .cornerRadius(20)
-                            .padding(.trailing, 4)
-                        
-                        VStack(alignment : .leading, spacing: 8) {
-                            Text(update.title)
-                                .font(.system(size: 20, weight: .bold))
+            List{ //Just Used for styling instead of using it also creating list
+                ForEach(store.updates) { update in
+                    NavigationLink(destination: UpdateDetail(update: update)) {
+                        HStack {
                             
-                            Text(update.text)
-                                .lineLimit(2)
-                                .font(.subheadline)
-                                .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
+                            Image(update.image)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 80, height: 80)
+                                .background(Color.black)
+                                .cornerRadius(20)
+                                .padding(.trailing, 4)
                             
-                            Text(update.date)
-                                .font(.caption)
-                                .fontWeight(.bold)
-                                .foregroundColor(.secondary)
+                            VStack(alignment : .leading, spacing: 8) {
+                                Text(update.title)
+                                    .font(.system(size: 20, weight: .bold))
+                                
+                                Text(update.text)
+                                    .lineLimit(2)
+                                    .font(.subheadline)
+                                    .foregroundColor(Color(#colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)))
+                                
+                                Text(update.date)
+                                    .font(.caption)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.secondary)
+                            }
                         }
+                        .padding(.vertical, 8)
                     }
-                    .padding(.vertical, 8)
+                }
+                .onDelete{ index in
+                    self.store.updates.remove(at: index.first!)
+                }
+                .onMove{ (source : IndexSet, destination : Int) in
+                    self.store.updates.move(fromOffsets: source, toOffset: destination)
                 }
             }
-        .navigationBarTitle(Text("Updates"))
+            .navigationBarTitle(Text("Updates"))
+            .navigationBarItems(leading: Button(action: addUpdate){
+                Text("Add Update")
+            }, trailing: EditButton())
         }
     }
 }
